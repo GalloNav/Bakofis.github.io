@@ -3,151 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backoffice - Portfolio</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Mi Portafolio - Desarrollador Full Stack</title>
+
+    <link rel="stylesheet" href="./styleP.css">
+    
+    <!-- AOS - Animate On Scroll -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
 </head>
 <body>
-    <!-- Vista Login -->
-    <div id="login" class="view active">
-        <div class="auth-container">
-            <div class="card">
-                <div class="logo">
-                    <div class="logo-icon">P</div>
-                    <h1>Bienvenido</h1>
-                    <p class="subtitle">Inicia sesion en tu portafolio</p>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">&lt;Portafolio perron /&gt;</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background"></div>
+        <div class="particles" id="particles"></div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="hero-title">Hola, Soy Desarrollador</h1>
+            <p class="hero-subtitle">Full Stack Developer & Creative Problem Solver</p>
+            <p class="hero-description">
+                Apasionado por crear experiencias excepcionales que combinan diseño elegante con código medio limpio y funcional (dentro de lo que cabe).
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    Ver Proyectos <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    Contactar <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title" data-aos="fade-up">Sobre Mí</h2>
+        <p class="section-subtitle" data-aos="fade-up">Conoce más sobre mi trayectoria</p>
+        
+        <div class="about-content">
+            <div class="about-text" data-aos="fade-right">
+                <p>
+                    Soy un desarrollador Full Stack (? con experiencia en crear aplicaciones web modernas y escalables. 
+                    Me especializo mayormente en backend pero tampoco le temo al frond. Pero mi mejor aspecto es el Weekend.
+                </p>
+                <p>
+                    Con un enfoque en las mejores prácticas de desarrollo, trabajo constantemente en proyectos 
+                    que desafían mis habilidades y me permiten crecer profesionalmente.
+                </p>
+                <p>
+                    Mi objetivo es construir soluciones que no solo cumplan con los requisitos técnicos, 
+                    sino que también proporcionen experiencias excepcionales para los usuarios.
+                </p>
+            </div>
+            
+            <div class="skills-grid" data-aos="fade-left">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                    <div class="skill-name">HTML5</div>
                 </div>
-
-                <div id="login-alert"></div>
-
-                <div class="form-group">
-                    <label for="login-email">Correo electronico</label>
-                    <input type="email" id="login-email" placeholder="tu@email.com" autocomplete="email">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                    <div class="skill-name">CSS3</div>
                 </div>
-
-                <div class="form-group">
-                    <label for="login-password">Contraseña</label>
-                    <input type="password" id="login-password" placeholder="••••••••" autocomplete="current-password">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-js"></i></div>
+                    <div class="skill-name">JavaScript</div>
                 </div>
-
-                <button class="btn" id="btn-login">Iniciar sesion</button>
-
-                <div class="link-text">
-                    ¿No tienes cuenta? <span class="link" onclick="showView('register')">Regístrate aquí</span>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-react"></i></div>
+                    <div class="skill-name">React</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-node"></i></div>
+                    <div class="skill-name">Node.js</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <div class="skill-name">MongoDB</div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Vista Register -->
-    <div id="register" class="view">
-        <div class="auth-container">
-            <div class="card">
-                <div class="logo">
-                    <div class="logo-icon">P</div>
-                    <h1>Crear cuenta</h1>
-                    <p class="subtitle">Completa tus datos para registrarte</p>
-                </div>
-
-                <div id="register-alert"></div>
-
-                <div class="form-group">
-                    <label for="register-name">Nombre completo</label>
-                    <input type="text" id="register-name" placeholder="Juan Pérez González" autocomplete="name">
-                </div>
-
-                <div class="form-group">
-                    <label for="register-email">Correo electronico</label>
-                    <input type="email" id="register-email" placeholder="tu@email.com" autocomplete="email">
-                </div>
-
-                <div class="form-group">
-                    <label for="register-itsonid">ITSON ID (6 dígitos)</label>
-                    <input type="text" id="register-itsonid" placeholder="216578" maxlength="6" pattern="[0-9]{6}">
-                </div>
-
-                <div class="form-group">
-                    <label for="register-password">Contraseña</label>
-                    <input type="password" id="register-password" placeholder="••••••••" autocomplete="new-password">
-                </div>
-
-                <button class="btn" id="btn-register">Crear cuenta</button>
-
-                <div class="link-text">
-                    ¿Ya tienes cuenta? <span class="link" onclick="showView('login')">Inicia sesion aquí</span>
-                </div>
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title" data-aos="fade-up">Mis Proyectos</h2>
+        <p class="section-subtitle" data-aos="fade-up">Explora mi trabajo más reciente</p>
+        
+        <div id="projects-container">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Cargando proyectos...</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Vista Home -->
-    <div id="home" class="view">
-        <div class="home-container">
-            <nav class="navbar">
-                <div class="navbar-brand">
-                    <div class="logo-icon" style="width: 40px; height: 40px; font-size: 20px; margin: 0;">P</div>
-                    <span>Portfolio Manager</span>
-                </div>
-                <div class="navbar-user">
-                    <span class="user-name" id="user-name">Usuario</span>
-                    <button class="btn-logout" onclick="logout()">Cerrar sesion</button>
-                </div>
-            </nav>
-
-            <div class="content-header">
-                <h2 class="content-title">Mis Proyectos</h2>
-                <button class="btn btn-add" onclick="openCreateModal()">
-                    <span>+</span> Nuevo Proyecto
-                </button>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title" data-aos="fade-up">Contacto</h2>
+        <p class="section-subtitle" data-aos="fade-up">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+        
+        <div class="contact-content" data-aos="fade-up">
+            <p class="contact-text">
+                Estoy siempre abierto a nuevas oportunidades y colaboraciones. 
+                Si tienes alguna pregunta o simplemente quieres conectar, no dudes en contactarme. porfa, ocupo feria.
+            </p>
+            
+            <div class="social-links">
+                <a href="https://github.com" target="_blank" class="social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:tu@email.com" class="social-link" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="social-link" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
             </div>
-
-            <div id="projects-container">
-                <div class="loading">
-                    <div class="spinner"></div>
-                    <p>Cargando proyectos...</p>
-                </div>
-            </div>
+            
+            <a href="" class="btn btn-primary">
+                Enviar Email <i class="fas fa-paper-plane"></i>
+            </a>
         </div>
-    </div>
+    </section>
 
-    <!-- Modal para Crear/Editar Proyecto -->
-    <div id="project-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="modal-title">Nuevo Proyecto</h3>
-                <button class="btn-close" onclick="closeModal()">&times;</button>
-            </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">
+            &copy; 2025 Mi Portafolio. Desarrollado con <i class="fas fa-heart" style="color: var(--primary);"></i> y mucho código.
+        </p>
+    </footer>
 
-            <div id="modal-alert"></div>
-
-            <div class="form-group">
-                <label for="project-title">Título del proyecto *</label>
-                <input type="text" id="project-title" placeholder="Mi proyecto increíble">
-            </div>
-
-            <div class="form-group">
-                <label for="project-description">Descripcion *</label>
-                <textarea id="project-description" placeholder="Describe tu proyecto..."></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="project-technologies">Tecnologías (separadas por comas)</label>
-                <input type="text" id="project-technologies" placeholder="React, Node.js, MongoDB">
-            </div>
-
-            <div class="form-group">
-                <label for="project-repository">Repositorio (URL)</label>
-                <input type="url" id="project-repository" placeholder="https://github.com/usuario/proyecto">
-            </div>
-
-            <div class="form-group">
-                <label for="project-images">Imágenes (URLs separadas por comas)</label>
-                <input type="text" id="project-images" placeholder="https://ejemplo.com/img1.jpg, https://ejemplo.com/img2.jpg">
-            </div>
-
-            <button class="btn" id="btn-save-project">Guardar Proyecto</button>
-        </div>
-    </div>
-
-    <script src="./Script.js"></script>
+    <!-- AOS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="./ScriptP.js"></script>
 </body>
 </html>
